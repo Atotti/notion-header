@@ -9,7 +9,7 @@ app.get('/svg', async (c) => {
   const time = getCurrentFormattedTime();
 
   const svgContent = `
-    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="200">
+    <svg xmlns="http://www.w3.org/2000/svg" width="80%" height="30vh">
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Rampart+One&amp;family=Zen+Kaku+Gothic+New&amp;display=swap');
       text {
