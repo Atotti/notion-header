@@ -26,7 +26,3 @@ assets = { directory = "public" }
 # [observability]
 # enabled = true
 # head_sampling_rate = 1
-
-[env.dev]
-name = "your-worker-name-dev"
-vars = { OPENWEATHERMAP_API_KEY = "your_openweathermap_api_key_here" }
