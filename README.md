@@ -28,9 +28,9 @@
 
 ## 🚀 デモ
 
-- ライトモード: [https://your-worker.your-subdomain.workers.dev/svg](https://notion-header.ayutaso.com/svg?tz=Asia/Tokyo)
-- ダークモード: [https://your-worker.your-subdomain.workers.dev/svg?theme=dark](https://notion-header.ayutaso.com/svg?tz=Asia/Tokyo?theme=dark)
-- カスタムタイムゾーン: [https://your-worker.your-subdomain.workers.dev/svg?tz=America/New_York](https://notion-header.ayutaso.com/svg?tz=America/New_York)
+- [ライトモード](https://notion-header.ayutaso.com/svg?tz=Asia/Tokyo)
+- [ダークモード](https://notion-header.ayutaso.com/svg?tz=Asia/Tokyo?theme=dark)
+- [カスタムタイムゾーン](https://notion-header.ayutaso.com/svg?tz=America/New_York)
 
 ## 📋 使い方
 
