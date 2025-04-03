@@ -5,13 +5,20 @@
     "deploy": "wrangler deploy --minify"
   },
   "dependencies": {
-    "@cloudflare/vitest-pool-workers": "^0.5.20",
-    "dotenv": "^16.4.5",
-    "hono": "^4.6.6",
+    "@cloudflare/vitest-pool-workers": "^0.5.41",
+    "dotenv": "^16.4.7",
+    "hono": "^4.7.5",
     "node-fetch": "^3.3.2"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20241018.0",
-    "wrangler": "^3.79.0"
+    "@cloudflare/workers-types": "^4.20250403.0",
+    "wrangler": "^3.114.4"
+  },
+  "pnpm": {
+    "ignoredBuiltDependencies": [
+      "esbuild",
+      "sharp",
+      "workerd"
+    ]
   }
 }

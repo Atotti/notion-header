@@ -60,7 +60,7 @@ https://notion-header.ayutaso.com/svg?theme=dark&tz=Europe/London
 
 ### 前提条件
 
-- [Node.js](https://nodejs.org/)
+- [Node.js 22](https://nodejs.org/)
 - [Wrangler CLI](https://developers.cloudflare.com/workers/wrangler/install-and-update/)
 
 ### インストール
@@ -71,14 +71,14 @@ git clone https://github.com/yourusername/notion-header-calendar.git
 cd notion-header-calendar
 
 # 依存関係をインストール
-npm install
+pnpm install
 ```
 
 ### ローカル開発
 
 ```bash
 # 開発サーバーを起動
-npm run dev
+pnpm run dev
 ```
 
 ブラウザで [http://localhost:8787/svg](http://localhost:8787/svg) にアクセスして確認できます。
@@ -87,7 +87,7 @@ npm run dev
 
 ```bash
 # Cloudflare Workersにデプロイ
-npm run deploy
+pnpm run deploy
 ```
 
 ## 🧩 アーキテクチャ
