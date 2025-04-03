@@ -1,39 +1,40 @@
 import { Hono } from 'hono';
-import { getCurrentFormattedDate, getCurrentFormattedTime } from './utils/dateUtils';
-import { partlyCloudy } from './utils/icon';
+import {
+  getCurrentFormattedDate,
+  getCurrentFormattedTime,
+  generateWeekCalendar
+} from './utils/dateUtils';
+import {
+  generateHeaderSVG
+} from './utils/svgUtils';
 
 const app = new Hono();
 
+/**
+ * SVG画像を生成するエンドポイント
+ * Notionヘッダーに埋め込むための日付、時間、カレンダーを表示するSVG
+ */
 app.get('/svg', async (c) => {
-  const date = getCurrentFormattedDate();
-  const time = getCurrentFormattedTime();
+  // クライアントのタイムゾーンを取得（Cloudflare Workersの機能を使用）
+  // @ts-ignore - Cloudflare Workersの型定義が不足しているため
+  const timezone = c.req.cf?.timezone || 'UTC';
 
-  const svgContent = `
-    <svg xmlns="http://www.w3.org/2000/svg" width="80%" height="30vh">
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Rampart+One&amp;family=Zen+Kaku+Gothic+New&amp;display=swap');
-      text {
-        font-family: 'Zen kaku Gothic New', sans-serif;
-      }
-    </style>
-      <rect width="100%" height="100%" fill="lightgray" />
-      <text x="20%" y="30%" dominant-baseline="middle" text-anchor="middle" font-size="50" fill="black">
-        ${date}
-      </text>
-      <text x="20%" y="60%" dominant-baseline="middle" text-anchor="middle" font-size="60" fill="black" letter-spacing="4">
-        ${time}
-      </text>
-      <svg x="55%" y="5%" width="100" height="100">
-        ${partlyCloudy}
-      </svg>
-      <text x="60%" y="70%" dominant-baseline="middle" text-anchor="middle" font-size="30" fill="black" letter-spacing="4">
-        Nakano, Tokyo 25°C
-      </text>
-    </svg>
-  `;
+  // 日付と時間を取得（タイムゾーンを考慮）
+  const date = getCurrentFormattedDate(timezone);
+  const time = getCurrentFormattedTime(timezone);
 
+  // 1週間分のカレンダーデータを生成（タイムゾーンを考慮）
+  const calendarData = generateWeekCalendar(timezone);
+
+  // 最終的なSVGを生成
+  const svgContent = generateHeaderSVG(date, time, calendarData);
+
+  // SVG画像としてレスポンスを返す
   return c.text(svgContent, 200, {
-    'Content-Type': 'image/svg+xml'
+    'Content-Type': 'image/svg+xml',
+    'Cache-Control': 'no-cache, no-store, must-revalidate',
+    'Pragma': 'no-cache',
+    'Expires': '0'
   });
 });
 
