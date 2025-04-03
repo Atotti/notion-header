@@ -33,26 +33,55 @@ export interface CalendarDay {
  * @returns 7日分のカレンダーデータ（今日を中心に前後3日ずつ）
  */
 export function generateWeekCalendar(timezone?: string): CalendarDay[] {
-    const today = new Date();
+    const now = new Date();
+
+    // タイムゾーンを考慮した「今日」の日付を取得
+    const todayParts = new Intl.DateTimeFormat('en-US', {
+        year: 'numeric',
+        month: 'numeric',
+        day: 'numeric',
+        timeZone: timezone || 'UTC'
+    }).formatToParts(now);
+
+    // formatToPartsの結果から年、月、日を抽出
+    const todayYear = parseInt(todayParts.find(part => part.type === 'year')?.value || '0');
+    const todayMonth = parseInt(todayParts.find(part => part.type === 'month')?.value || '0');
+    const todayDay = parseInt(todayParts.find(part => part.type === 'day')?.value || '0');
+
     const result: CalendarDay[] = [];
+    const baseDate = new Date(now);
 
     // 今日の3日前から3日後までの計7日間
     for (let i = -3; i <= 3; i++) {
-        const date = new Date(today);
-        date.setDate(today.getDate() + i);
+        const date = new Date(baseDate);
+        date.setDate(baseDate.getDate() + i);
 
-        const weekdayOptions: Intl.DateTimeFormatOptions = {
+        // この日付をタイムゾーンを考慮して取得
+        const dateParts = new Intl.DateTimeFormat('en-US', {
+            year: 'numeric',
+            month: 'numeric',
+            day: 'numeric',
+            timeZone: timezone || 'UTC'
+        }).formatToParts(date);
+
+        const year = parseInt(dateParts.find(part => part.type === 'year')?.value || '0');
+        const month = parseInt(dateParts.find(part => part.type === 'month')?.value || '0');
+        const day = parseInt(dateParts.find(part => part.type === 'day')?.value || '0');
+
+        const weekday = new Intl.DateTimeFormat('en-US', {
             weekday: 'short',
             timeZone: timezone || 'UTC'
-        };
-        const weekday = new Intl.DateTimeFormat('en-US', weekdayOptions).format(date);
+        }).format(date);
+
+        // タイムゾーンを考慮した日付比較
+        const isToday = year === todayYear && month === todayMonth && day === todayDay;
 
         result.push({
-            date: date.getDate(),
-            month: date.getMonth() + 1, // JavaScriptの月は0始まりなので+1
-            year: date.getFullYear(),
+            date: day,
+            month: month,
+            year: year,
             weekday,
-            isToday: i === 0
+            isToday: isToday
         });
     }
 
