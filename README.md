@@ -28,19 +28,19 @@
 
 ## 🚀 デモ
 
-- ライトモード: [https://your-worker.your-subdomain.workers.dev/svg](https://notion-header.ayutaso.com/svg?tz=Asia/Tokyo)
-- ダークモード: [https://your-worker.your-subdomain.workers.dev/svg?theme=dark](https://notion-header.ayutaso.com/svg?tz=Asia/Tokyo?theme=dark)
-- カスタムタイムゾーン: [https://your-worker.your-subdomain.workers.dev/svg?tz=America/New_York](https://notion-header.ayutaso.com/svg?tz=America/New_York)
+- [ライトモード](https://notion-header.ayutaso.com/svg?tz=Asia/Tokyo)
+- [ダークモード](https://notion-header.ayutaso.com/svg?tz=Asia/Tokyo?theme=dark)
+- [カスタムタイムゾーン](https://notion-header.ayutaso.com/svg?tz=America/New_York)
 
 ## 📋 使い方
 
 ### Notionへの埋め込み
 
 1. Notionページを開く
-2. `/embed` コマンドを入力
-3. 「URL を埋め込む」を選択
-4. デプロイしたWorkerのURLを入力（例: `https://your-worker.your-subdomain.workers.dev/svg`）
-5. 「埋め込む」をクリック
+2. カバー画像を変更
+3. 「URL リンク」を選択
+4. デプロイしたWorkerのURLを入力（独自カスタムしない場合: `https://notion-header.ayutaso.com/svg`）
+5. 「確定」をクリック
 
 ### カスタマイズオプション
 
@@ -53,14 +53,14 @@ URLクエリパラメータを使用して、SVGの表示をカスタマイズ�
 
 複数のパラメータを組み合わせることも可能です：
 ```
-https://your-worker.your-subdomain.workers.dev/svg?theme=dark&tz=Europe/London
+https://notion-header.ayutaso.com/svg?theme=dark&tz=Europe/London
 ```
 
 ## 🛠️ 開発
 
 ### 前提条件
 
-- [Node.js](https://nodejs.org/) (v14以上)
+- [Node.js](https://nodejs.org/)
 - [Wrangler CLI](https://developers.cloudflare.com/workers/wrangler/install-and-update/)
 
 ### インストール
@@ -78,7 +78,7 @@ npm install
 
 ```bash
 # 開発サーバーを起動
-npx wrangler dev
+npm run dev
 ```
 
 ブラウザで [http://localhost:8787/svg](http://localhost:8787/svg) にアクセスして確認できます。
@@ -87,7 +87,7 @@ npx wrangler dev
 
 ```bash
 # Cloudflare Workersにデプロイ
-npx wrangler publish
+npm run deploy
 ```
 
 ## 🧩 アーキテクチャ
