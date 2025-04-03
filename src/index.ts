@@ -26,8 +26,11 @@ app.get('/svg', async (c) => {
   // 1週間分のカレンダーデータを生成（タイムゾーンを考慮）
   const calendarData = generateWeekCalendar(timezone);
 
-  // 最終的なSVGを生成
-  const svgContent = generateHeaderSVG(date, time, calendarData);
+  // クエリパラメータからテーマを取得
+  const isDarkMode = c.req.query('theme') === 'dark';
+
+  // 最終的なSVGを生成（テーマを指定）
+  const svgContent = generateHeaderSVG(date, time, calendarData, isDarkMode);
 
   // SVG画像としてレスポンスを返す
   return c.text(svgContent, 200, {
