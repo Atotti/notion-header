@@ -63,16 +63,16 @@ export function generateHeaderSVG(date: string, time: string, calendarData: Cale
       <rect width="100%" height="100%" fill="url(#bg-gradient)" rx="10" ry="10" />
 
       <!-- 左側：日付と時間 -->
-      <g transform="translate(${svgWidth * 0.15}, ${svgHeight * 0.5})">
+      <g transform="translate(${svgWidth * 0.12}, ${svgHeight * 0.5})">
         <text x="0" y="-30" class="date-text" text-anchor="start">${date}</text>
         <text x="0" y="30" class="time-text" text-anchor="start">${time}</text>
       </g>
 
       <!-- 区切り線 -->
-      <line x1="${svgWidth * 0.35}" y1="${svgHeight * 0.2}" x2="${svgWidth * 0.35}" y2="${svgHeight * 0.8}" stroke="#adb5bd" stroke-width="1" />
+      <line x1="${svgWidth * 0.38}" y1="${svgHeight * 0.2}" x2="${svgWidth * 0.38}" y2="${svgHeight * 0.8}" stroke="#adb5bd" stroke-width="1" />
 
       <!-- 右側：カレンダー - 中央揃え -->
-      <g transform="translate(${svgWidth * 0.65}, ${svgHeight * 0.5})">
+      <g transform="translate(${svgWidth * 0.67}, ${svgHeight * 0.5})">
         ${calendarData.map((day, index) => {
           const offset = index - Math.floor(calendarData.length / 2);
           const x = offset * dayWidth;
