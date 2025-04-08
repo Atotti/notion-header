@@ -42,7 +42,7 @@ const darkTheme: Theme = {
 export function generateHeaderSVG(date: string, time: string, calendarData: CalendarDay[], isDarkMode: boolean = false): string {
   const dayWidth = 60;
   const svgWidth = 1000;
-  const svgHeight = 200;
+  const svgHeight = 160;
 
   // テーマの選択
   const theme = isDarkMode ? darkTheme : lightTheme;
