@@ -12,8 +12,8 @@ importers:
         specifier: ^0.8.12
         version: 0.8.12(@cloudflare/workers-types@4.20250414.0)(@vitest/runner@2.1.9)(@vitest/snapshot@2.1.9)(vitest@2.1.9(@types/node@22.14.0))
       dotenv:
-        specifier: ^16.4.7
-        version: 16.4.7
+        specifier: ^16.5.0
+        version: 16.5.0
       hono:
         specifier: ^4.7.6
         version: 4.7.6
@@ -747,8 +747,8 @@ packages:
   devalue@4.3.3:
     resolution: {integrity: sha512-UH8EL6H2ifcY8TbD2QsxwCC/pr5xSwPvv85LrLXVihmHVC3T3YqTCIwnR5ak0yO1KYqlxrPVOA/JVZJYPy2ATg==}
 
-  dotenv@16.4.7:
-    resolution: {integrity: sha512-47qPchRCykZC03FhkYAhrvwU4xDBFIj1QPqaarj6mdM/hgUzfPHcpkHJOn3mJAufFeeAxAzeGsr5X0M4k6fLZQ==}
+  dotenv@16.5.0:
+    resolution: {integrity: sha512-m/C+AwOAr9/W1UOIZUo232ejMNnJAJtYQjUbHoNTBNTJSvqzzDh7vnrei3o3r3m9blf6ZoDkvcw0VmozNRFJxg==}
     engines: {node: '>=12'}
 
   es-module-lexer@1.6.0:
@@ -1548,7 +1548,7 @@ snapshots:
 
   devalue@4.3.3: {}
 
-  dotenv@16.4.7: {}
+  dotenv@16.5.0: {}
 
   es-module-lexer@1.6.0: {}
 
