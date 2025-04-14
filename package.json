@@ -11,7 +11,7 @@
     "node-fetch": "^3.3.2"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20250407.0",
+    "@cloudflare/workers-types": "^4.20250414.0",
     "wrangler": "^4.7.1"
   },
   "pnpm": {
