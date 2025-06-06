@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@cloudflare/vitest-pool-workers':
         specifier: ^0.8.34
-        version: 0.8.34(@cloudflare/workers-types@4.20250601.0)(@vitest/runner@2.1.9)(@vitest/snapshot@2.1.9)(vitest@2.1.9(@types/node@22.14.0))
+        version: 0.8.34(@cloudflare/workers-types@4.20250606.0)(@vitest/runner@2.1.9)(@vitest/snapshot@2.1.9)(vitest@2.1.9(@types/node@22.14.0))
       dotenv:
         specifier: ^16.5.0
         version: 16.5.0
@@ -22,11 +22,11 @@ importers:
         version: 3.3.2
     devDependencies:
       '@cloudflare/workers-types':
-        specifier: ^4.20250525.0
-        version: 4.20250601.0
+        specifier: ^4.20250606.0
+        version: 4.20250606.0
       wrangler:
         specifier: ^4.15.2
-        version: 4.18.0(@cloudflare/workers-types@4.20250601.0)
+        version: 4.18.0(@cloudflare/workers-types@4.20250606.0)
 
 packages:
 
@@ -80,8 +80,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@cloudflare/workers-types@4.20250601.0':
-    resolution: {integrity: sha512-foAgsuo+u+swy5I+xzPwo4MquPhLZW0fuLLsl4uZlZv2k10WziSvZ4wTIkK/AADFtCVRjLNduTT8E/b7DDoInA==}
+  '@cloudflare/workers-types@4.20250606.0':
+    resolution: {integrity: sha512-9T/Y/Mxe57UVzqgfjJKheiMplnStj/3CmCHlgoZNLU8JW2waRbXvpY3EEeliiYAJfeHZTjeAaKO2pCabxAoyCw==}
 
   '@cspotcode/source-map-support@0.8.1':
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
@@ -600,6 +600,9 @@ packages:
   '@types/estree@1.0.7':
     resolution: {integrity: sha512-w28IoSUCJpidD/TGviZwwMJckNESJZXFu7NBZ5YJ4mEUnNraUn9Pm8HSZm/jDF1pDWYKspWE7oVphigUPRakIQ==}
 
+  '@types/estree@1.0.8':
+    resolution: {integrity: sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==}
+
   '@types/node@22.14.0':
     resolution: {integrity: sha512-Kmpl+z84ILoG+3T/zQFyAJsU6EPTmOCj8/2+83fSN6djd6I4o7uOuGIH6vq3PrjY5BGitSbFuMN18j3iknubbA==}
 
@@ -1030,7 +1033,7 @@ snapshots:
     optionalDependencies:
       workerd: 1.20250525.0
 
-  '@cloudflare/vitest-pool-workers@0.8.34(@cloudflare/workers-types@4.20250601.0)(@vitest/runner@2.1.9)(@vitest/snapshot@2.1.9)(vitest@2.1.9(@types/node@22.14.0))':
+  '@cloudflare/vitest-pool-workers@0.8.34(@cloudflare/workers-types@4.20250606.0)(@vitest/runner@2.1.9)(@vitest/snapshot@2.1.9)(vitest@2.1.9(@types/node@22.14.0))':
     dependencies:
       '@vitest/runner': 2.1.9
       '@vitest/snapshot': 2.1.9
@@ -1040,7 +1043,7 @@ snapshots:
       miniflare: 4.20250525.0
       semver: 7.7.2
       vitest: 2.1.9(@types/node@22.14.0)
-      wrangler: 4.18.0(@cloudflare/workers-types@4.20250601.0)
+      wrangler: 4.18.0(@cloudflare/workers-types@4.20250606.0)
       zod: 3.25.48
     transitivePeerDependencies:
       - '@cloudflare/workers-types'
@@ -1062,7 +1065,7 @@ snapshots:
   '@cloudflare/workerd-windows-64@1.20250525.0':
     optional: true
 
-  '@cloudflare/workers-types@4.20250601.0': {}
+  '@cloudflare/workers-types@4.20250606.0': {}
 
   '@cspotcode/source-map-support@0.8.1':
     dependencies:
@@ -1365,6 +1368,8 @@ snapshots:
 
   '@types/estree@1.0.7': {}
 
+  '@types/estree@1.0.8': {}
+
   '@types/node@22.14.0':
     dependencies:
       undici-types: 6.21.0
@@ -1532,7 +1537,7 @@ snapshots:
 
   estree-walker@3.0.3:
     dependencies:
-      '@types/estree': 1.0.7
+      '@types/estree': 1.0.8
 
   exit-hook@2.2.1: {}
 
@@ -1805,7 +1810,7 @@ snapshots:
       '@cloudflare/workerd-linux-arm64': 1.20250525.0
       '@cloudflare/workerd-windows-64': 1.20250525.0
 
-  wrangler@4.18.0(@cloudflare/workers-types@4.20250601.0):
+  wrangler@4.18.0(@cloudflare/workers-types@4.20250606.0):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.4.0
       '@cloudflare/unenv-preset': 2.3.2(unenv@2.0.0-rc.17)(workerd@1.20250525.0)
@@ -1816,7 +1821,7 @@ snapshots:
       unenv: 2.0.0-rc.17
       workerd: 1.20250525.0
     optionalDependencies:
-      '@cloudflare/workers-types': 4.20250601.0
+      '@cloudflare/workers-types': 4.20250606.0
       fsevents: 2.3.3
     transitivePeerDependencies:
       - bufferutil
