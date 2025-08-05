@@ -12,8 +12,8 @@ importers:
         specifier: ^0.8.59
         version: 0.8.59(@cloudflare/workers-types@4.20250606.0)(@vitest/runner@2.1.9)(@vitest/snapshot@2.1.9)(vitest@2.1.9(@types/node@22.14.0))
       dotenv:
-        specifier: ^16.5.0
-        version: 16.5.0
+        specifier: ^17.2.1
+        version: 17.2.1
       hono:
         specifier: ^4.8.12
         version: 4.8.12
@@ -779,8 +779,8 @@ packages:
   devalue@4.3.3:
     resolution: {integrity: sha512-UH8EL6H2ifcY8TbD2QsxwCC/pr5xSwPvv85LrLXVihmHVC3T3YqTCIwnR5ak0yO1KYqlxrPVOA/JVZJYPy2ATg==}
 
-  dotenv@16.5.0:
-    resolution: {integrity: sha512-m/C+AwOAr9/W1UOIZUo232ejMNnJAJtYQjUbHoNTBNTJSvqzzDh7vnrei3o3r3m9blf6ZoDkvcw0VmozNRFJxg==}
+  dotenv@17.2.1:
+    resolution: {integrity: sha512-kQhDYKZecqnM0fCnzI5eIv5L4cAe/iRI+HqMbO/hbRdTAeXDG+M9FjipUxNfbARuEg4iHIbhnhs78BCHNbSxEQ==}
     engines: {node: '>=12'}
 
   error-stack-parser-es@1.0.5:
@@ -1622,7 +1622,7 @@ snapshots:
 
   devalue@4.3.3: {}
 
-  dotenv@16.5.0: {}
+  dotenv@17.2.1: {}
 
   error-stack-parser-es@1.0.5: {}
 
