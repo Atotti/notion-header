@@ -5,7 +5,7 @@
     "deploy": "wrangler deploy --minify"
   },
   "dependencies": {
-    "@cloudflare/vitest-pool-workers": "^0.8.59",
+    "@cloudflare/vitest-pool-workers": "^0.9.3",
     "dotenv": "^17.2.1",
     "hono": "^4.9.7",
     "node-fetch": "^3.3.2"
