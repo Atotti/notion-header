@@ -6,7 +6,7 @@
   },
   "dependencies": {
     "@cloudflare/vitest-pool-workers": "^0.9.12",
-    "dotenv": "^17.2.1",
+    "dotenv": "^17.2.3",
     "hono": "^4.9.12",
     "node-fetch": "^3.3.2"
   },
